@@ -16,54 +16,24 @@
    ========================================================= */
 const projects = [
   {
-    title: "LM741 Inverting Amplifier",
-    date: "Oct 2026",
-    summary: "Breadboarded inverting op-amp with an adjustable gain, powered from a ±5 V bench supply.",
+    title: "Audio Amplifier (Speaker Circuit)",
+    date: "Oct 29 2026",
+    summary: "Breadboarded circuit with audio jack, switch, and speaker that amplifies audio when connected to a device",
     description: `
-      <p>An inverting amplifier built around the LM741 op-amp. The input resistor is 1 kΩ and
-      the feedback path uses a 10 kΩ potentiometer, so the gain can be adjusted from 0 to about −10.</p>
-      <h4>What I learned</h4>
+      <p>lets larp</p>
+      <h4>more larp?</h4>
       <ul>
-        <li>How the gain formula Vout = −(Rf / Rin) × Vin behaves on a real circuit.</li>
-        <li>Why the output clips near the supply rails.</li>
+        <li>test 1</li>
+        <li>test 2</li>
       </ul>`,
     tags: ["Analog", "Op-amp"],
     image: "",
     emoji: "📈",
     links: [
-      { label: "Schematic", url: "#" },
-      { label: "Notes", url: "#" }
+      { label: "me no work :(", url: "#" },
+      { label: "me also no work :(", url: "#" }
     ]
   },
-  {
-    title: "ESP32 Voice Alert Box",
-    date: "Oct 2026",
-    summary: "An ESP32-S3-BOX-3 that receives a signal and speaks a voice message.",
-    description: `
-      <p>An ESP32-S3-BOX-3 running ESPHome and connected to Home Assistant. When it receives
-      a trigger, it plays a spoken message through its built-in speaker.</p>`,
-    tags: ["Embedded", "IoT"],
-    image: "",
-    emoji: "🔊",
-    links: [
-      { label: "Source code", url: "#" }
-    ]
-  },
-  {
-    title: "Head-Tracking FPV RC Car",
-    date: "Oct 2026",
-    summary: "RC car whose camera follows my head movement using an MPU6050 and servos.",
-    description: `
-      <p>An ESP32-based RC car with a first-person-view camera on a pan/tilt mount.
-      An MPU6050 motion sensor reads head movement and two SG90 servos move the camera to match.</p>`,
-    tags: ["Embedded", "Robotics"],
-    image: "",
-    emoji: "🚗",
-    links: [
-      { label: "Source code", url: "#" },
-      { label: "Parts list", url: "#" }
-    ]
-  }
 ];
 
 /* =========================================================
