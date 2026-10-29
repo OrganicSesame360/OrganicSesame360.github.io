@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EE Projects | Your Name</title>
+  <meta name="description" content="Electrical engineering projects: circuits, embedded systems, and hardware builds.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">⚡ Your Name</a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle dark/light theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero container">
+      <h1>Electrical Engineering Projects</h1>
+      <p class="lead">Circuits, embedded systems, and hardware builds, with schematics, code, and lessons learned.</p>
+      <a class="btn" href="#projects">View projects</a>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search projects..." aria-label="Search projects">
+        <div id="filters" class="filters"></div>
+      </div>
+      <div id="project-grid" class="grid"></div>
+      <p id="no-results" class="muted" hidden>No projects match your search.</p>
+    </section>
+
+    <section id="about" class="container">
+      <h2>About</h2>
+      <p>
+        Write a few sentences about yourself here: what you study or do,
+        what areas of electrical engineering interest you (analog, embedded, power, RF...),
+        and what you are working toward.
+      </p>
+      <h3>Skills &amp; tools</h3>
+      <ul class="chips">
+        <li>KiCad</li>
+        <li>Fritzing</li>
+        <li>Arduino / ESP32</li>
+        <li>C / C++</li>
+        <li>Python</li>
+        <li>Oscilloscope &amp; multimeter</li>
+        <li>Soldering</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:you@example.com">you@example.com</a> ·
+        <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Your Name. Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Project detail popup -->
+  <dialog id="project-dialog">
+    <button id="dialog-close" aria-label="Close">✕</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
