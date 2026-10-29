@@ -32,7 +32,6 @@ const projects = [
     links: [
       { label: "me no work :(", url: "#" },
       { label: "me also no work :(", url: "#" }
-    ]
   },
 ];
 
