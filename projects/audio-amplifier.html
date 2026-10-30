@@ -56,10 +56,10 @@
   <!-- ============ SECTION: goal ============ -->
   <div class="detail">
     <h2>Goal</h2>
-    <p>Build a circuit with a speaker that can plug into an audio source such as a phone.</p>
+    <p>Build a circuit with a speaker that can plug into an audio source such as a phone / laptop.</p>
     <ul>
-      <li>Goal number one</li>
-      <li>Goal number two</li>
+      <li>Build a breadboarded circuit and test using a function generator</li>
+      <li>Once the speaker has been tested, move and solder the components to a protoboard for final testing</li>
     </ul>
   </div>
 
@@ -77,6 +77,9 @@
           <tr><td>Audio jack</td><td>1</td><td>Notes</td></tr>
           <tr><td>Speaker</td><td>1</td><td>Notes</td></tr>
           <tr><td>Function Generator</td><td>1</td><td>Notes</td></tr>
+          <tr><td>Potentiometer</td><td>1</td><td>Notes</td></tr>
+          <tr><td>OpAmp</td><td>1</td><td>Notes</td></tr>
+          <tr><td>Protoboard</td><td>1</td><td>Notes</td></tr>
         </tbody>
       </table>
     </div>
@@ -85,7 +88,7 @@
   <!-- ============ SECTION: how it works / build steps ============ -->
   <div class="detail">
     <h2>How it works</h2>
-    <p>Explain the idea in plain words. Add a schematic picture here if you have one:</p>
+    <p>This is an LM386 audio amplifier. The audio comes in through C1 and the volume pot, the LM386 boosts the signal, and C5 passes the amplified signal to the speaker while blocking the DC. The remaining parts like C2, C6, and the R1/C4 components keep the circuit stable and quiet by filtering power noise and preventing oscillation.</p>
     <img src="../images/my-new-project/schematic.png" alt="Schematic" style="border-radius:12px;border:1px solid var(--border);margin-bottom:14px">
     <ol>
       <li><strong>Step one.</strong> What you did.</li>
