@@ -48,35 +48,6 @@ const projects = [
     links: [
       { label: "Source code", url: "#" }
     ]
-  },
-    {
-    title: "Test",
-    date: "Oct 2026",
-    summary: "An ESP32-S3-BOX-3 that receives a signal and speaks a voice message.",
-    description: `
-      <p>An ESP32-S3-BOX-3 running ESPHome and connected to Home Assistant. When it receives
-      a trigger, it plays a spoken message through its built-in speaker.</p>`,
-    tags: ["Embedded", "IoT"],
-    image: "",
-    emoji: "🔊",
-    links: [
-      { label: "Source code", url: "#" }
-    ]
-  },
-  {
-    title: "Head-Tracking FPV RC Car",
-    date: "Oct 2026",
-    summary: "RC car whose camera follows my head movement using an MPU6050 and servos.",
-    description: `
-      <p>An ESP32-based RC car with a first-person-view camera on a pan/tilt mount.
-      An MPU6050 motion sensor reads head movement and two SG90 servos move the camera to match.</p>`,
-    tags: ["Embedded", "Robotics"],
-    image: "",
-    emoji: "🚗",
-    links: [
-      { label: "Source code", url: "#" },
-      { label: "Parts list", url: "#" }
-    ]
   }
 ];
 
