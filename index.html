@@ -52,8 +52,9 @@
     <p class="section-sub">Click a tag to filter, or click a project to see the full write-up.</p>
 
     <!-- Filter buttons build themselves from each card's data-tags. Don't edit. -->
+    <input type="search" id="search" class="search" placeholder="Search projects..." aria-label="Search projects">
     <div class="filters" id="filters"></div>
-
+    <p id="no-results" class="no-results" hidden>No projects match your search.</p>
     <div class="grid">
 
       <!-- ====================================================================
