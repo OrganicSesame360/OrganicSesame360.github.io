@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- EDIT: project name (shows on the browser tab) -->
+<title>Audio Amplifier | Andrew Ho</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../script.js"></script>
+</head>
+
+<!-- =======================================================================
+  HOW TO MAKE A NEW PROJECT PAGE
+  1. Copy this file and rename the copy, e.g. "my-new-project.html"
+     (lowercase, dashes instead of spaces, keep it in the "projects" folder).
+  2. Make a folder for its pictures: "images/my-new-project/" and upload photos.
+  3. Edit the words below. Every section is optional: if you don't need one,
+     delete everything from its  <!-- SECTION: ... -->  line to its  </div>.
+  4. Add a card for it on the home page (see the instructions in index.html).
+
+  Image paths from this folder start with "../images/..."
+  ======================================================================= -->
+
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">your<span>_name</span></a>
+    <div class="nav-links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle light/dark mode">☀</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container narrow">
+
+  <a href="../index.html#projects" class="back-link">← All projects</a>
+
+  <!-- ============ SECTION: title + summary ============ -->
+  <div class="page-head">
+    <span class="project-date">Month Year</span>
+    <h1>Audio Amplifier</h1>
+    <p class="lead">choom</p>
+    <div class="tags">
+      <span class="tag">Tag One</span>
+      <span class="tag">Tag Two</span>
+    </div>
+  </div>
+
+  <!-- Cover photo. Replace the file name. -->
+  <img class="cover" src="../images/my-new-project/cover.jpg" alt="Short description of the photo">
+
+  <!-- ============ SECTION: quick facts (edit or delete boxes freely) ============ -->
+  <div class="facts">
+    <div class="fact"><small>Status</small><strong>Finished</strong></div>
+    <div class="fact"><small>Time spent</small><strong>2 weekends</strong></div>
+    <div class="fact"><small>Cost</small><strong>~$30</strong></div>
+    <div class="fact"><small>Difficulty</small><strong>Beginner</strong></div>
+  </div>
+
+  <!-- ============ SECTION: goal ============ -->
+  <div class="detail">
+    <h2>Goal</h2>
+    <p>What were you trying to build or learn? What problem does it solve?</p>
+    <ul>
+      <li>Goal number one</li>
+      <li>Goal number two</li>
+    </ul>
+  </div>
+
+  <!-- ============ SECTION: materials ============ -->
+  <div class="detail">
+    <h2>Materials</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>Qty</th><th>Notes</th></tr></thead>
+        <tbody>
+          <!-- To add a part, copy one <tr> row. For a link: <a href="URL" target="_blank">Buy ↗</a> -->
+          <tr><td>Part name</td><td>1</td><td>What it does, <a href="https://example.com" target="_blank" rel="noopener">link ↗</a></td></tr>
+          <tr><td>Another part</td><td>2</td><td>Notes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ SECTION: how it works / build steps ============ -->
+  <div class="detail">
+    <h2>How it works</h2>
+    <p>Explain the idea in plain words. Add a schematic picture here if you have one:</p>
+    <img src="../images/my-new-project/schematic.png" alt="Schematic" style="border-radius:12px;border:1px solid var(--border);margin-bottom:14px">
+    <ol>
+      <li><strong>Step one.</strong> What you did.</li>
+      <li><strong>Step two.</strong> What you did next.</li>
+    </ol>
+    <div class="callout">Callout box: a tip, a warning, or the key idea.</div>
+    <!-- Code block (optional) -->
+    <pre><code>// paste code or config here</code></pre>
+  </div>
+
+  <!-- ============ SECTION: photo gallery ============ -->
+  <div class="detail">
+    <h2>Photos</h2>
+    <div class="gallery">
+      <!-- Each <figure> is one photo. Click a photo to open it full size. -->
+      <figure><a href="../images/my-new-project/photo1.jpg" target="_blank"><img src="../images/my-new-project/photo1.jpg" alt="Photo 1"></a><figcaption>Caption for photo 1</figcaption></figure>
+      <figure><a href="../images/my-new-project/photo2.jpg" target="_blank"><img src="../images/my-new-project/photo2.jpg" alt="Photo 2"></a><figcaption>Caption for photo 2</figcaption></figure>
+      <figure><a href="../images/my-new-project/photo3.jpg" target="_blank"><img src="../images/my-new-project/photo3.jpg" alt="Photo 3"></a><figcaption>Caption for photo 3</figcaption></figure>
+    </div>
+  </div>
+
+  <!-- ============ SECTION: video ============ -->
+  <div class="detail">
+    <h2>Demo video</h2>
+    <!-- OPTION A: YouTube. Replace VIDEO_ID with the part after "v=" in the video's link.
+         Example: youtube.com/watch?v=dQw4w9WgXcQ  ->  VIDEO_ID is dQw4w9WgXcQ -->
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Demo video" loading="lazy" allowfullscreen></iframe>
+    </div>
+    <!-- OPTION B: a video file you uploaded (keep it under ~25 MB). Delete option A and use:
+    <div class="video-wrap"><video controls src="../images/my-new-project/demo.mp4"></video></div>
+    -->
+  </div>
+
+  <!-- ============ SECTION: challenges ============ -->
+  <div class="detail">
+    <h2>Challenges &amp; fixes</h2>
+    <ul>
+      <li><strong>Problem:</strong> what went wrong. <strong>Fix:</strong> how you solved it.</li>
+    </ul>
+  </div>
+
+  <!-- ============ SECTION: things learned ============ -->
+  <div class="detail">
+    <h2>What I learned</h2>
+    <ul>
+      <li>Lesson number one</li>
+      <li>Lesson number two</li>
+    </ul>
+  </div>
+
+  <!-- ============ SECTION: next steps ============ -->
+  <div class="detail">
+    <h2>What's next</h2>
+    <ul>
+      <li>An improvement you'd like to make</li>
+    </ul>
+  </div>
+
+  <!-- ============ SECTION: downloads and links ============ -->
+  <div class="detail">
+    <h2>Files &amp; links</h2>
+    <div class="downloads">
+      <a class="btn primary" href="https://github.com/YOUR-USERNAME/REPO-NAME" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <a class="btn" href="../docs/my-new-project-schematic.pdf" target="_blank">Schematic (PDF)</a>
+      <a class="btn" href="../docs/my-new-project-report.pdf" target="_blank">Full report (PDF)</a>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <a class="btn" href="../index.html#projects">← Back to all projects</a>
+    <a class="btn" href="#">Back to top ↑</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Your Name</span>
+    <a href="../index.html">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
