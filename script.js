@@ -16,19 +16,19 @@
    ========================================================= */
 const projects = [
   {
-    title: "LM741 Inverting Amplifier",
-    date: "Oct 2026",
-    summary: "Breadboarded inverting op-amp with an adjustable gain, powered from a ±5 V bench supply.",
+    title: "Audio Amplifier (Speaker Circuitboard)",
+    date: "Oct 29 2026",
+    summary: "Breadboarded audio amplifier using an LM741 op-amp, audio jack, switch, and speaker.",
     description: `
       <p>An inverting amplifier built around the LM741 op-amp. The input resistor is 1 kΩ and
       the feedback path uses a 10 kΩ potentiometer, so the gain can be adjusted from 0 to about −10.</p>
-      <h4>What I learned</h4>
+      <h4>Skills Acquired</h4>
       <ul>
         <li>How the gain formula Vout = −(Rf / Rin) × Vin behaves on a real circuit.</li>
         <li>Why the output clips near the supply rails.</li>
       </ul>`,
     tags: ["Analog", "Op-amp"],
-    image: "",
+    image: https://cdn.discordapp.com/attachments/788163051752521752/1565457616199749763/IMG_8103.jpg?ex=6ae4f984&is=6ae3a804&hm=0ccc78dff9b9c5ba318c7cc3b777f201c19a58a73f71ca9d5e48ce49fa37e9a7&,
     emoji: "📈",
     links: [
       { label: "Schematic", url: "#" },
