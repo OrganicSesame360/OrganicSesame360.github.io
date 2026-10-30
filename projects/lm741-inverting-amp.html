@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LM741 Inverting Amplifier | Your Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">your<span>_name</span></a>
+    <div class="nav-links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle light/dark mode">☀</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container narrow">
+
+  <a href="../index.html#projects" class="back-link">← All projects</a>
+
+  <div class="page-head">
+    <span class="project-date">October 2026</span>
+    <h1>LM741 Inverting Amplifier</h1>
+    <p class="lead">A breadboard inverting op-amp whose gain I can adjust by turning a potentiometer.</p>
+    <div class="tags"><span class="tag">LM741</span><span class="tag">Op-amp</span><span class="tag">Fritzing</span></div>
+  </div>
+
+  <img class="cover" src="../images/lm741-inverting-amp/cover.jpg" alt="LM741 Inverting Amplifier">
+
+  <div class="facts">
+    <div class="fact"><small>Status</small><strong>Finished</strong></div>
+    <div class="fact"><small>Supply</small><strong>±5 V</strong></div>
+    <div class="fact"><small>Gain range</small><strong>0 to −10</strong></div>
+    <div class="fact"><small>Difficulty</small><strong>Beginner</strong></div>
+  </div>
+
+  <div class="detail">
+    <h2>Goal</h2>
+    <p>Build and measure a classic inverting amplifier and see the gain formula work on a real circuit.</p>
+    <ul>
+      <li>Confirm that gain = −Rf / Rin</li>
+      <li>Draw the circuit in Fritzing</li>
+      <li>Measure input and output on a scope</li>
+    </ul>
+  </div>
+
+  <div class="detail">
+    <h2>Materials</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>Qty</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>LM741 op-amp</td><td>1</td><td>8-pin DIP</td></tr>
+          <tr><td>1 kΩ resistor</td><td>1</td><td>Input resistor (Rin)</td></tr>
+          <tr><td>10 kΩ potentiometer</td><td>1</td><td>Feedback resistor (Rf), sets the gain</td></tr>
+          <tr><td>Breadboard + jumper wires</td><td>1</td><td>—</td></tr>
+          <tr><td>Dual ±5 V supply</td><td>1</td><td>Powered from a virtual bench</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="detail">
+    <h2>How it works</h2>
+    <p>The input signal goes through a 1 kΩ resistor into the inverting input of the op-amp. The potentiometer sits between the output and that input, so turning it changes the gain. The output is the input flipped upside down and multiplied by the gain.</p>
+    <ol>
+      <li><strong>Wire the power.</strong> +5 V and −5 V to the op-amp supply pins.</li>
+      <li><strong>Add Rin and Rf.</strong> 1 kΩ in, 10 kΩ pot in the feedback path.</li>
+      <li><strong>Ground the non-inverting input.</strong></li>
+      <li><strong>Apply a signal and measure.</strong> Compare input and output.</li>
+    </ol>
+    <div class="callout">EDIT ME: replace this sample text with what you actually did and saw.</div>
+  </div>
+
+  <div class="detail">
+    <h2>Photos</h2>
+    <div class="gallery">
+      <figure><a href="../images/lm741-inverting-amp/photo1.jpg" target="_blank"><img src="../images/lm741-inverting-amp/photo1.jpg" alt="Photo 1"></a><figcaption>Caption</figcaption></figure>
+      <figure><a href="../images/lm741-inverting-amp/photo2.jpg" target="_blank"><img src="../images/lm741-inverting-amp/photo2.jpg" alt="Photo 2"></a><figcaption>Caption</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="detail">
+    <h2>What I learned</h2>
+    <ul>
+      <li>EDIT ME: what you learned about op-amps</li>
+      <li>EDIT ME: what you learned about wiring a breadboard cleanly</li>
+    </ul>
+  </div>
+
+  <div class="detail">
+    <h2>Files &amp; links</h2>
+    <div class="downloads">
+      <a class="btn primary" href="https://github.com/YOUR-USERNAME/inverting-amp" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <a class="btn" href="../index.html#projects">← Back to all projects</a>
+    <a class="btn" href="#">Back to top ↑</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Your Name</span>
+    <a href="../index.html">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>

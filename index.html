@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- EDIT #1: the text shown on the browser tab -->
+<title>Your Name | Electrical Engineering Projects</title>
+<meta name="description" content="A collection of my electrical engineering projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<!-- ============================ NAVIGATION ============================ -->
+<nav>
+  <div class="container">
+    <!-- EDIT #2: your name, top-left corner -->
+    <a href="index.html" class="logo">your<span>_name</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle light/dark mode">☀</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero">
+  <div class="container">
+    <!-- EDIT #3: headline, intro, buttons -->
+    <span class="eyebrow">// electrical engineering portfolio</span>
+    <h1>I design circuits, build hardware, and <em>document</em> how it works.</h1>
+    <p>Welcome! This is where I keep my electrical engineering projects: schematics, PCBs, embedded systems, and everything I learn along the way.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">See my projects</a>
+      <a href="https://github.com/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ PROJECTS ============================ -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Click a tag to filter, or click a project to see the full write-up.</p>
+
+    <!-- Filter buttons build themselves from each card's data-tags. Don't edit. -->
+    <div class="filters" id="filters"></div>
+
+    <div class="grid">
+
+      <!-- ====================================================================
+           HOW TO ADD A NEW PROJECT CARD (takes ~1 minute):
+           1. Copy everything from "<article" to "</article>" (one card).
+           2. Paste it right below this comment so the newest is first.
+           3. Change the words, the tags, the image name, and the 2 links:
+                 - the title link  -> href="projects/YOUR-NEW-PAGE.html"
+                 - the "Read more" -> same page
+              (The new page is made by copying projects/_TEMPLATE.html.)
+           No photo yet? Leave the img line alone; a placeholder shows instead.
+           ==================================================================== -->
+
+      <!-- ============ CARD: copy from here ============ -->
+      <article class="project" data-tags="Embedded, IoT">
+        <img class="project-img" src="images/esp32-voice-alert/cover.jpg" alt="ESP32 voice alert device">
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3><a class="card-link" href="projects/esp32-voice-alert.html">ESP32 Voice Alert Device</a></h3>
+          <p>A small touchscreen device that listens for a signal and speaks a custom voice message out loud. Built with an ESP32-S3-BOX-3 and ESPHome.</p>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">ESPHome</span>
+            <span class="tag">Home Assistant</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/esp32-voice-alert" target="_blank" rel="noopener">GitHub ↗</a>
+            <span class="more">Read more →</span>
+          </div>
+        </div>
+      </article>
+      <!-- ============ CARD: copy until here ============ -->
+
+      <article class="project" data-tags="Analog, Breadboard">
+        <img class="project-img" src="images/lm741-inverting-amp/cover.jpg" alt="LM741 inverting amplifier on a breadboard">
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3><a class="card-link" href="projects/lm741-inverting-amp.html">LM741 Inverting Amplifier</a></h3>
+          <p>Breadboard build of an inverting op-amp circuit with an adjustable gain, powered from a ±5 V supply.</p>
+          <div class="tags">
+            <span class="tag">LM741</span>
+            <span class="tag">Op-amp</span>
+            <span class="tag">Fritzing</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/inverting-amp" target="_blank" rel="noopener">GitHub ↗</a>
+            <span class="more">Read more →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" data-tags="Embedded, Robotics">
+        <img class="project-img" src="images/head-tracking-rc-car/cover.jpg" alt="Head-tracking RC car">
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3><a class="card-link" href="projects/head-tracking-rc-car.html">Head-Tracking FPV RC Car</a></h3>
+          <p>An RC car with a camera that follows my head movement, using a motion sensor and pan/tilt servos.</p>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">MPU6050</span>
+            <span class="tag">Servos</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/head-tracking-rc-car" target="_blank" rel="noopener">GitHub ↗</a>
+            <span class="more">Read more →</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About me</h2>
+    <div class="about-box">
+      <div>
+        <!-- EDIT #4: a few sentences about you -->
+        <h3>Hi, I'm Your Name 👋</h3>
+        <p>I'm an electrical engineering student who loves turning ideas into working hardware. I enjoy everything from analog circuits to microcontrollers and PCB design. I started this site to document my builds and share what I learn.</p>
+      </div>
+      <div class="skills">
+        <!-- EDIT #5: your skills and tools -->
+        <span class="tag">KiCad</span>
+        <span class="tag">Fritzing</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Python</span>
+        <span class="tag">Soldering</span>
+        <span class="tag">Oscilloscope</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-sub">Want to collaborate or have a question about a project?</p>
+    <div class="hero-buttons">
+      <!-- EDIT #6: your email and links -->
+      <a href="mailto:you@example.com" class="btn primary">you@example.com</a>
+      <a href="https://github.com/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Your Name</span>
+    <a href="#">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
