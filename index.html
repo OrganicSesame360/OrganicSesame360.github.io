@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============ EDIT #1: PAGE TITLE (shows in the browser tab) ============ -->
+<title>Your Name | Electrical Engineering Projects</title>
+<meta name="description" content="A collection of my electrical engineering projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- COLORS (change these to restyle the whole site) ---------- */
+  :root {
+    --bg: #0b0f14;
+    --surface: #131a22;
+    --surface-2: #1a232e;
+    --border: #243040;
+    --text: #e6edf3;
+    --muted: #8b9bb0;
+    --accent: #3ddc97;          /* main accent: try #4da3ff (blue) or #ffb547 (amber) */
+    --accent-soft: rgba(61, 220, 151, 0.12);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f8fa;
+    --surface: #ffffff;
+    --surface-2: #eef2f6;
+    --border: #d8e0e8;
+    --text: #14202b;
+    --muted: #5b6b7d;
+    --accent: #0a9f6a;
+    --accent-soft: rgba(10, 159, 106, 0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: "JetBrains Mono", monospace; font-weight: 500; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 24px; font-size: 0.95rem; color: var(--muted); }
+  .nav-links a:hover { color: var(--text); }
+  #theme-toggle {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    width: 36px; height: 36px; border-radius: 10px; cursor: pointer; font-size: 1rem;
+  }
+  #theme-toggle:hover { border-color: var(--accent); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 110px 0 70px; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 44px 44px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 70%);
+  }
+  .eyebrow {
+    display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 0.85rem;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; letter-spacing: -0.02em; max-width: 780px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { color: var(--muted); font-size: 1.15rem; max-width: 600px; margin-top: 22px; }
+  .hero-buttons { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 500;
+    border: 1px solid var(--border); background: var(--surface); transition: 0.2s;
+  }
+  .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); color: #04130c; border-color: var(--accent); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 70px 0; }
+  .section-title { font-size: 1.8rem; letter-spacing: -0.01em; }
+  .section-sub { color: var(--muted); margin-top: 6px; }
+
+  /* ---------- FILTER BUTTONS ---------- */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 32px; }
+  .filter {
+    font: inherit; font-size: 0.88rem; color: var(--muted); cursor: pointer;
+    background: transparent; border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 999px; transition: 0.2s;
+  }
+  .filter:hover { color: var(--text); border-color: var(--muted); }
+  .filter.active { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- PROJECT CARDS ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .project {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; transition: 0.25s;
+  }
+  .project:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+  .project.hidden { display: none; }
+
+  .project-img {
+    aspect-ratio: 16 / 9; width: 100%; object-fit: cover; display: block;
+    background: var(--surface-2); border-bottom: 1px solid var(--border);
+  }
+  /* shown when you don't give a photo */
+  .project-img.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    font-family: "JetBrains Mono", monospace; font-size: 2rem; color: var(--accent);
+    background:
+      linear-gradient(135deg, var(--accent-soft), transparent 60%),
+      repeating-linear-gradient(0deg, transparent 0 21px, var(--border) 21px 22px),
+      repeating-linear-gradient(90deg, transparent 0 21px, var(--border) 21px 22px),
+      var(--surface-2);
+  }
+
+  .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+  .project-date { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; color: var(--muted); }
+  .project h3 { font-size: 1.2rem; margin: 6px 0 8px; letter-spacing: -0.01em; }
+  .project p { color: var(--muted); font-size: 0.95rem; flex: 1; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
+  .tag {
+    font-family: "JetBrains Mono", monospace; font-size: 0.75rem;
+    padding: 3px 9px; border-radius: 6px; background: var(--surface-2); color: var(--muted);
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .links a { font-size: 0.9rem; font-weight: 500; color: var(--accent); }
+  .links a:hover { text-decoration: underline; }
+
+  /* ---------- ABOUT + CONTACT ---------- */
+  .about-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 32px; display: grid; gap: 28px; grid-template-columns: 1.4fr 1fr;
+  }
+  .about-box p { color: var(--muted); margin-top: 12px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; }
+  @media (max-width: 720px) { .about-box { grid-template-columns: 1fr; } }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: 0.9rem; }
+  footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+
+<body>
+
+<!-- ============================ NAVIGATION ============================ -->
+<nav>
+  <div class="container">
+    <!-- EDIT #2: your name in the top-left corner -->
+    <a href="#" class="logo">your<span>_name</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle light/dark mode">☀</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero">
+  <div class="container">
+    <!-- EDIT #3: headline, intro, and buttons -->
+    <span class="eyebrow">// electrical engineering portfolio</span>
+    <h1>I design circuits, build hardware, and <em>document</em> how it works.</h1>
+    <p>Welcome! This is where I keep my electrical engineering projects: schematics, PCBs, embedded systems, and everything I learn along the way.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">See my projects</a>
+      <a href="https://github.com/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ PROJECTS ============================ -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Click a tag to filter. Newest projects go at the top.</p>
+
+    <!-- Filter buttons are created automatically from your project tags. Don't edit this. -->
+    <div class="filters" id="filters"></div>
+
+    <div class="grid" id="project-grid">
+
+      <!-- ====================================================================
+           HOW TO ADD A NEW PROJECT:
+           1. Copy everything from "<article" down to "</article>" (one block).
+           2. Paste it right below this comment (newest first) or anywhere in the grid.
+           3. Change the words, tags, and links. That's it!
+
+           TIPS
+           - data-tags: the tags used for filtering, separated by commas.
+           - Image: put a photo in an "images" folder in your repo, then change the
+             src below to "images/your-photo.jpg". No photo? Delete the whole <img> line
+             and uncomment the "placeholder" line instead.
+           - Don't need a link (like Video)? Just delete that one <a> line.
+           ==================================================================== -->
+
+      <!-- ============ PROJECT: copy from here ============ -->
+      <article class="project" data-tags="Embedded, IoT">
+        <img class="project-img" src="images/esp32-voice-alert.jpg" alt="ESP32 voice alert device" onerror="this.outerHTML='<div class=\'project-img placeholder\'>[ no image ]</div>'">
+        <!-- <div class="project-img placeholder">[ no image ]</div> -->
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3>ESP32 Voice Alert Device</h3>
+          <p>A small touchscreen device that listens for a signal and speaks a custom voice message out loud. Built with an ESP32-S3-BOX-3 and ESPHome.</p>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">ESPHome</span>
+            <span class="tag">Home Assistant</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/esp32-voice-alert" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener">Video ↗</a>
+            <a href="docs/esp32-voice-alert.pdf" target="_blank" rel="noopener">Report ↗</a>
+          </div>
+        </div>
+      </article>
+      <!-- ============ PROJECT: copy until here ============ -->
+
+      <article class="project" data-tags="Analog, Breadboard">
+        <div class="project-img placeholder">[ no image ]</div>
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3>LM741 Inverting Amplifier</h3>
+          <p>Breadboard build of an inverting op-amp circuit with a 1k input resistor and a 10k potentiometer in the feedback path, so the gain can be adjusted by hand.</p>
+          <div class="tags">
+            <span class="tag">LM741</span>
+            <span class="tag">Op-amp</span>
+            <span class="tag">Fritzing</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/inverting-amp" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="docs/inverting-amp-schematic.pdf" target="_blank" rel="noopener">Schematic ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" data-tags="Embedded, Robotics">
+        <div class="project-img placeholder">[ no image ]</div>
+        <div class="project-body">
+          <span class="project-date">October 2026</span>
+          <h3>Head-Tracking FPV RC Car</h3>
+          <p>An RC car with a camera that follows my head movement. An MPU6050 on my head sends motion data to servos that pan and tilt the camera.</p>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">MPU6050</span>
+            <span class="tag">Servos</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/head-tracking-rc-car" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About me</h2>
+    <div class="about-box" style="margin-top:24px">
+      <div>
+        <!-- EDIT #4: write a few sentences about yourself -->
+        <h3>Hi, I'm Your Name 👋</h3>
+        <p>I'm an electrical engineering student who loves turning ideas into working hardware. I enjoy everything from analog circuits to microcontrollers and PCB design. I started this site to document my builds and share what I learn.</p>
+      </div>
+      <div class="skills">
+        <!-- EDIT #5: your skills / tools. Copy or delete lines freely. -->
+        <span class="tag">KiCad</span>
+        <span class="tag">Fritzing</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Python</span>
+        <span class="tag">Soldering</span>
+        <span class="tag">Oscilloscope</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-sub">Want to collaborate or have a question about a project?</p>
+    <div class="hero-buttons">
+      <!-- EDIT #6: your email and links -->
+      <a href="mailto:you@example.com" class="btn primary">you@example.com</a>
+      <a href="https://github.com/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/YOUR-USERNAME" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Your Name</span>
+    <a href="#">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // ---------- Auto-build the filter buttons from each project's data-tags ----------
+  const projects = document.querySelectorAll(".project");
+  const filtersBox = document.getElementById("filters");
+  const allTags = new Set();
+
+  projects.forEach(p => {
+    p.dataset.tags.split(",").forEach(t => { if (t.trim()) allTags.add(t.trim()); });
+  });
+
+  function makeButton(label, filterValue) {
+    const b = document.createElement("button");
+    b.className = "filter" + (filterValue === "all" ? " active" : "");
+    b.textContent = label;
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(f => f.classList.remove("active"));
+      b.classList.add("active");
+      projects.forEach(p => {
+        const tags = p.dataset.tags.split(",").map(t => t.trim());
+        p.classList.toggle("hidden", filterValue !== "all" && !tags.includes(filterValue));
+      });
+    });
+    filtersBox.appendChild(b);
+  }
+
+  makeButton("All", "all");
+  [...allTags].sort().forEach(t => makeButton(t, t));
+
+  // ---------- Light / dark mode (remembers your choice) ----------
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved) root.dataset.theme = saved;
+  toggle.textContent = root.dataset.theme === "light" ? "☾" : "☀";
+
+  toggle.addEventListener("click", () => {
+    const next = root.dataset.theme === "light" ? "dark" : "light";
+    root.dataset.theme = next;
+    toggle.textContent = next === "light" ? "☾" : "☀";
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
